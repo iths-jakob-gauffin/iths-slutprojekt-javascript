@@ -1,0 +1,67 @@
+/*
+ COLORS
+ Grey light 1: #faf9f9;
+ 
+ 
+ */
+
+// $Primary: #1ed561;
+// $Primary-light: #55c57a;
+// $Primary-dark: #28b485;
+
+
+// $Grey-light-1: #faf9f9;
+// $Grey-light-2: #f4f2f2;
+// $Grey-light-3: #f0eeee;
+// $Grey-light-4: #ccc;
+
+// $Grey-dark-1: #333;
+// $Grey-dark-2: #777;
+// $Grey-dark-3: #999;
+
+
+$body-color: yellowgreen;
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%; //1rem = 10px ( 10/16px = 62.5%)
+
+    @include respond(tab-land) {
+        //width < 1200?
+        font-size: 56.25%; //1 rem = 9px, 9/16 = 56.25%
+        ;
+    }
+
+    @include respond(tab-port) {
+        //width < 900
+        font-size: 50%; //1 rem = 8px, 8/16 = 50%
+        ;
+    }
+
+    @include respond(big-desktop) {
+        font-size: 75%; //1rem = 12px. 12/16 = 75%
+        ;
+    }
+
+}
+
+body {
+
+    background-image: linear-gradient(to right bottom, ($color-grey-light-4), ($color-grey-dark-3));
+    // background-image: linear-gradient(to right bottom, ($color-primary-light), ($color-primary-dark));
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    min-height: 100vh;
+}

@@ -1,0 +1,36 @@
+.header {
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    height: 95vh;
+    background-color: #fff;
+    border-bottom: $color-grey-light-2;
+    // background-image: "../../public/Images/header-vr-coral-beauty.jpg";
+    // background-image: url("../../public/Images/header-vr-coral-beauty.jpg");
+    background-image: linear-gradient(to right bottom,
+            $color-header-light-op,
+            $color-header-dark-op),
+        url("../../public/Images/Jungle/Jungle waterfall 8 1800.jpg");
+    // url("../../public/Images/header-palm.jpg");
+    background-position: top;
+    background-repeat: no-repeat;
+    // overflow: hidden;
+    background-size: cover;
+    margin: 0 auto;
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+
+    @include respond(phone) {
+        -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+        clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);
+
+    }
+
+    &__text-box {
+        position: absolute;
+        top: 42%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+}

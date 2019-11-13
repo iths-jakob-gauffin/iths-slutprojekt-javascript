@@ -1,0 +1,133 @@
+// .staff {
+//     .header {
+//         background-image: url("../../public/Images/earth.jpg");
+//         background-position: top;
+//         background-repeat: no-repeat;
+//         // overflow: hidden;
+//         background-size: cover;
+//         margin: 0 auto;
+//         -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+//         clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+//     }
+
+//     .main-staff {
+//         display: grid;
+//         grid-template-columns: repeat(10, 1fr);
+//         grid-template-rows: 1fr 1.5fr repeat(3, 1fr);
+//         grid-column-gap: 0px;
+//         grid-row-gap: 0px;
+
+//         .form-container {
+//             grid-area: 1 / 4 / 2 / 8;
+//             display: flex;
+//             justify-content: center;
+//             align-items: center;
+//             width: 100%;
+
+//             .inputform {
+//                 display: flex;
+//                 justify-content: space-between;
+//                 align-items: center;
+//                 width: 100%;
+
+//                 .paragraph {
+//                     margin-bottom: 0;
+//                 }
+//             }
+//         }
+
+
+//         .charactercards-container {
+//             grid-area: 2 / 3 / 3 / 9;
+//             display: flex;
+//             // justify-content: center;
+//             overflow: scroll;
+
+//             .castMembers {
+//                 display: flex;
+//                 // justify-content: center;
+//             }
+
+
+//         }
+
+//         .driver-container {
+//             grid-area: 3 / 1 / 6 / 3;
+//             display: flex;
+//             align-items: center;
+//             justify-content: center;
+//             flex-direction: column;
+//         }
+
+//         .chef-container {
+//             grid-area: 3 / 3 / 6 / 5;
+//             display: flex;
+//             align-items: center;
+//             justify-content: center;
+//             flex-direction: column;
+//         }
+
+//         .guide-container {
+//             grid-area: 3 / 5 / 6 / 7;
+//             display: flex;
+//             align-items: center;
+//             justify-content: center;
+//             flex-direction: column;
+//         }
+
+//         .cleaner-container {
+//             grid-area: 3 / 7 / 6 / 9;
+//             display: flex;
+//             align-items: center;
+//             justify-content: center;
+//             flex-direction: column;
+//         }
+
+//         .chief-container {
+//             grid-area: 3 / 9 / 6 / 11;
+//             display: flex;
+//             align-items: center;
+//             justify-content: center;
+//             flex-direction: column;
+//         }
+//     }
+
+//     .allstarContainer {
+//         display: flex;
+//         flex-direction: column;
+
+//         .allstarHeader {
+//             display: flex;
+//             width: 30rem;
+
+//             .notEmpty,
+//             .empty,
+//             .paragraph {
+//                 width: 60%;
+//             }
+
+//             .think {
+//                 width: 40%;
+//                 margin: 1.5rem .5rem;
+//                 font-size: 2rem;
+//                 // background: blue;
+//             }
+
+
+//         }
+
+//         .allstarMain {
+//             display: block;
+
+//             .jobDescription {
+//                 display: block;
+//             }
+//         }
+
+//     }
+
+//     .bajs {
+//         width: 10rem;
+//         height: 10rem;
+//         background: black;
+//     }

@@ -1,0 +1,115 @@
+body {
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+    line-height: 1.6;
+    color: var(--color-grey-dark-2);
+}
+
+.heading-primary {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    // color: #fff;
+    color: #000;
+    // background: black;
+    text-decoration-style: solid;
+    text-decoration-color: black;
+    text-decoration: black;
+
+    text-transform: uppercase;
+    text-align: center;
+    backface-visibility: hidden;
+
+
+
+    &--main {
+        display: block;
+        font-size: 6rem;
+        font-weight: 400;
+        letter-spacing: 3.5rem;
+        animation: moveInLeft 3s ease-out;
+        // animation-timing-function: ease-out;
+
+        @include respond (phone) {
+            letter-spacing: 1rem;
+            font-size: 5rem;
+        }
+    }
+
+    &--sub {
+        display: block;
+        font-size: 2.5rem;
+        font-weight: 900;
+        letter-spacing: 1.5rem;
+        animation: moveInRight 4.5s;
+
+        @include respond (phone) {
+            letter-spacing: .5rem;
+
+        }
+
+    }
+}
+
+.heading-secondary {
+    font-size: 3.5rem;
+    text-transform: uppercase;
+    font-weight: 900;
+    display: inline-block;
+    background-image: linear-gradient(to right, $color-primary-light, $color-primary-dark), url("../../../public/Images/002_SITE_PLAN.jpg");
+
+    color: transparent;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    background-clip: text;
+
+    @include respond (tab-land) {
+        font-size: 3rem;
+    }
+
+    @include respond (phone) {
+        font-size: 2rem;
+    }
+}
+
+.heading-secondary-gold {
+    font-size: 3.5rem;
+    text-transform: uppercase;
+    font-weight: 900;
+    display: inline-block;
+    background-image: linear-gradient(to right, $color-yellow-light, $color-yellow-dark);
+    // -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    background-clip: text;
+}
+
+
+
+.heading-tertiary {
+    font-size: 1.6rem;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.paragraph {
+    font-size: 1.6rem;
+
+    &:not(:last-child) {
+        margin-bottom: 3rem;
+    }
+}
+
+form {
+    font-size: 2rem;
+}
+
+.staff {
+    .heading-primary--main {
+        width: 100%;
+
+    }
+}

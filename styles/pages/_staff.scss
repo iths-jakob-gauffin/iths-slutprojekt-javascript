@@ -1,0 +1,202 @@
+.staff {
+    .header {
+        background-image: url("../../public/Images/space/space large 1.jpg");
+        background-position: top;
+        background-repeat: no-repeat;
+        // overflow: hidden;
+        background-size: cover;
+        margin: 0 auto;
+        -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+        clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+
+
+        @include respond(phone) {
+            -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+            clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);
+
+        }
+    }
+
+    .main-staff {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: .5fr 1fr 2fr;
+        grid-column-gap: 0px;
+        grid-row-gap: 0px;
+
+        @include respond (tab-port) {
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: 1fr 30rem 2fr;
+        }
+
+        .form-container {
+            grid-area: 1 / 1 / 2 / 2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+
+            @include respond (tab-port) {
+                grid-area: 1 / 1 / 2 / 3;
+            }
+
+            .inputform {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                width: 100%;
+
+                .paragraph {
+                    margin-bottom: 0;
+                }
+            }
+        }
+
+
+        .charactercards-container {
+            grid-area: 2 / 1 / 3 / 2;
+            display: flex;
+            // justify-content: center;
+            overflow: scroll;
+
+            @include respond (tab-port) {
+                grid-area: 2 / 1 / 3 / 3;
+            }
+
+            .castMembers {
+                display: flex;
+                // justify-content: center;
+            }
+
+
+        }
+
+
+    }
+
+    .allstarPhone {
+        display: none;
+        visibility: hidden;
+
+        @include respond (tab-port) {
+            visibility: visible;
+            width: 100%;
+            display: grid;
+
+            grid-template-columns: repeat(2, 50%);
+            grid-template-rows: repeat(3, 1fr);
+            grid-column-gap: 0px;
+            grid-row-gap: 0px;
+
+            .select-job {
+                grid-area: 1 / 1 / 2 / 2;
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+                width: 50vw;
+                border: .5rem solid black;
+                padding: 1rem;
+            }
+
+            .select-actor {
+                grid-area: 1 / 2 / 2 / 3;
+                width: 50vw;
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+
+                // margin-left: 5rem;
+                border: .5rem solid black;
+            }
+
+            .submit-staff {
+                grid-area: 2 / 1 / 3 / 3;
+                // display: flex;
+                margin-left: 5rem;
+                font-size: 2rem;
+
+            }
+
+            .selected-staff {
+                grid-area: 3 / 1 / 4 / 3;
+            }
+
+
+            label {
+                padding: 1rem;
+            }
+        }
+    }
+
+    .allstarBig {
+        // display: none !important;
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        grid-template-rows: 1fr;
+        grid-column-gap: 0px;
+        grid-row-gap: 0px;
+
+        @include respond (tab-port) {
+            display: none !important;
+            visibility: hidden;
+        }
+
+        .allstarContainer {
+            // grid-area: 3 / 1 / 4 / 2;
+            // display: flex;
+            // flex-direction: column;
+            // justify-content: center;
+            // align-items: center;
+            border: .2rem solid black;
+            background: linear-gradient(to right bottom, $color-yellow-light, $color-grey-dark-1);
+            // background: $color-dark-grey;
+            border-radius: 3px;
+            margin: 1rem;
+
+            @include respond (tab-port) {
+                display: none !important;
+                visibility: hidden;
+            }
+
+            .driver {
+                grid-area: 1 / 1 / 2 / 2;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+            }
+
+            .chef {
+                grid-area: 1 / 2 / 2 / 3;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+            }
+
+            .guide {
+                grid-area: 1 / 3 / 2 / 4;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+            }
+
+            .cleaner {
+                grid-area: 1 / 4 / 2 / 5;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+            }
+
+            .chief {
+                grid-area: 1 / 5 / 2 / 6;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+            }
+        }
+    }
+}

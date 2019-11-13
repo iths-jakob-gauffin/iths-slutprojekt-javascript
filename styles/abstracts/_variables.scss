@@ -1,0 +1,88 @@
+:root {
+    --color-primary: #1ed561;
+    --color-primary-light: #55c57a;
+    --color-primary-dark: #28b485;
+
+    --color-primary-light-op: #55c57aa8;
+    --color-primary-dark-op: #28b485a8;
+
+    --color-header-light-op: #55c57a42;
+    --color-header-dark-op: #28b48538;
+
+    --color-other-light-op: #6dd5eda8;
+    --color-other-dark-op: #2193b056;
+
+    --color-greenbeach-light-op: #00cdaba8;
+    --color-greenbeach-dark-op: #02aab0a8;
+
+    --color-yellow-light: #ffb900;
+    --color-yellow-dark: #ff7730;
+    --color-yellow-light-op: #ffbb00a8;
+    --color-yellow-dark-op: #ff783050;
+    // --color-yellow-light-op: #ffbb00a8;
+    // --color-yellow-dark-op: #ff7830a8;
+
+    --color-blue-light: #2998FF;
+    --color-blue-dark: #5643fa;
+    --color-blue-light-op: rgba(41, 152, 255, 0.80);
+    --color-blue-dark-op: #5543fa8a;
+
+
+
+    --color-grey-light-1: #faf9f9;
+    --color-grey-light-2: #f4f2f2;
+    --color-grey-light-3: #f0eeee;
+    --color-grey-light-4: #ccc;
+
+    --color-grey-dark-1: #333;
+    --color-grey-dark-2: #777;
+    --color-grey-dark-3: #999;
+
+    --shadow-dark: 0 2rem 6rem rgba(0, 0, 0, 0.3);
+
+}
+
+//SASS-VARIABLES:
+$color-primary: #1ed561;
+$color-primary-light: #55c57a;
+$color-primary-dark: #28b485;
+
+$color-primary-light-op: #55c57aa8;
+$color-primary-dark-op: #28b485a8;
+
+$color-header-light-op: #55c57a42;
+$color-header-dark-op: #28b48538;
+
+$color-other-light-op: #6dd5eda8;
+$color-other-dark-op: #2193b056;
+
+$color-greenbeach-light-op: #00cdaba8;
+$color-greenbeach-dark-op: #02aab0a8;
+
+$color-yellow-light: #ffb900;
+$color-yellow-dark: #ff7730;
+$color-yellow-light-op: #ffbb0015;
+$color-yellow-dark-op: #ff78303a;
+
+$color-blue-light: #2998FF;
+$color-blue-dark: #5643fa;
+$color-blue-light-op: rgba(41, 152, 255, 0.80);
+$color-blue-dark-op: #5543fa8a;
+
+$color-white: #fff;
+$color-grey-light-1: #f7f7f7;
+$color-grey-light-2: #f4f2f2;
+$color-grey-light-3: #f0eeee;
+$color-grey-light-4: #ccc;
+
+$color-black: #000;
+$color-grey-dark-1: #333;
+$color-grey-dark-2: #777;
+$color-grey-dark-3: #999;
+$shadow-dark: 0 2rem 6rem rgba(0, 0, 0, 0.3);
+
+
+
+//Font
+
+$default-font-size: 1.6rem;
