@@ -31,18 +31,9 @@ scanAllstarButton.addEventListener("click", e => {
 
     const print = new Print();
 
-    print.calling("apropåinget");
+    print.calling();
 
 })
-
-
-// function clearList() {
-//     const containerPlace = document.querySelector('.castMembers');
-//     while (containerPlace.firstChild) {
-//         containerPlace.firstChild.remove();
-//     }
-// }
-
 
 function clear() {
     for (var key in tvCastObject) {
@@ -54,55 +45,14 @@ function clear() {
 
 input.addEventListener('submit', (e) => {
     e.preventDefault();
-    // clear();
-
-    // const clearObjectValues = (tvCastObject) => {
-    //     Object.keys(tvCastObject).forEach((param) => {
-    //         if ((tvCastObject[param]).toString() === "[object Object]") {
-    //             clearObjectValues(tvCastObject[param]);
-    //         } else {
-    //             tvCastObject[param] = undefined;
-    //         }
-    //     })
-    //     // return tvCastObject;
-    // };
-
     const userInput = input.tvshow.value.trim();
-    // const TvShow = new GetTvShow(castMemberPlace);
-    // const dragAndDrop = new DragAndDrop();
-    // const print = new Print();
+    TvShow
+        .getTvShow(userInput)
+        .then(TvShow.clearTvCastObject())
+        .then(TvShow.clearList())
 
-    if (!checkTvShow.checked) {
-
-        TvShow
-            // .clearObjectValues(tvCastObject)
-            .getTvShow(userInput)
-            .then(TvShow.clearTvCastObject())
-            .then(TvShow.clearList())
-
-            .then((data) => TvShow.getCast(data.show.id))
-            .then((data) => TvShow.createActorObject(data))
-            .then((data) => TvShow.renderAndAddDragEvent(data))
-            .then(dragAndDrop.startLoop())
-        // .then((data) => print.renderStaff(draggedHtml, data))
-
-        // .then(dragAndDrop.addEL())
-        // .then(dragAndDrop.fill.addEventListener('dragStart', dragAndDrop.dragStart())
-        //     .then(dragAndDrop.fill.addEventListener('dragend', dragAndDrop.dragEnd())));
-    }
+        .then((data) => TvShow.getCast(data.show.id))
+        .then((data) => TvShow.createActorObject(data))
+        .then((data) => TvShow.renderAndAddDragEvent(data))
+        .then(dragAndDrop.startLoop())
 });
-// input.addEventListener('submit', (e) => {
-//     e.preventDefault();
-//     clearList();
-//     const userInput = input.tvshow.value.trim();
-//     const nowClass = new GetTvShow(containerPlace);
-//     if (!checkTvShow.checked) {
-//         nowClass
-//             .getTvShow(userInput)
-//             .then((data) => nowClass.getCast(data.show.id))
-//             .then((data) => nowClass.renderData(data, checkTvShow.checked))
-
-//             .then(startLoop())
-//             .then(fill.addEventListener('dragstart', dragStart()).then(fill.addEventListener('dragend', dragEnd())));
-//     }
-// });

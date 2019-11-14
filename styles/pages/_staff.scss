@@ -1,202 +1,273 @@
-.staff {
-    .header {
-        background-image: url("../../public/Images/space/space large 1.jpg");
-        background-position: top;
-        background-repeat: no-repeat;
-        // overflow: hidden;
-        background-size: cover;
-        margin: 0 auto;
-        -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
-        clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+.container {
+	max-width: 95%;
+	margin: 5rem auto;
+	background-color: var(--color-grey-light-1);
+	box-shadow: var(--shadow-dark);
+	border-radius: 1rem;
 
+	min-height: 50rem;
 
-        @include respond(phone) {
-            -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
-            clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);
+	@include respond(tab-land) {
+		max-width: 100%;
+		margin: 0;
+	}
+	.staff {
+		width: 100%;
+		.header {
+			background-image: url("./../public/Images/space/space large 1.jpg");
+			background-position: top;
+			background-repeat: no-repeat;
+			background-size: cover;
+			margin: 0 auto;
+			-webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+			clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
 
-        }
-    }
+			@include respond(phone) {
+				-webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+				clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);
+			}
+		}
 
-    .main-staff {
-        display: grid;
-        grid-template-columns: 1fr;
-        grid-template-rows: .5fr 1fr 2fr;
-        grid-column-gap: 0px;
-        grid-row-gap: 0px;
+		.main-staff {
+			display: grid;
+			grid-template-columns: 1fr;
+			grid-template-rows: .5fr 1fr 1.6fr;
+			grid-column-gap: 0px;
+			grid-row-gap: 0px;
+			width: 100%;
 
-        @include respond (tab-port) {
-            grid-template-columns: repeat(2, 1fr);
-            grid-template-rows: 1fr 30rem 2fr;
-        }
+			@include respond (tab-port) {
+				grid-template-columns: repeat(2, 1fr);
+				grid-template-rows: 1fr 30rem 2fr;
+			}
 
-        .form-container {
-            grid-area: 1 / 1 / 2 / 2;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 100%;
+			.form-container {
+				grid-area: 1 / 1 / 2 / 2;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				width: 100%;
 
-            @include respond (tab-port) {
-                grid-area: 1 / 1 / 2 / 3;
-            }
+				@include respond (tab-port) {
+					grid-area: 1 / 1 / 2 / 3;
+					display: flex;
+					justify-content: center;
+					align-items: center;
+					width: 100%;
+				}
 
-            .inputform {
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                width: 100%;
+				.inputform {
+					display: flex;
+					justify-content: center;
+					align-items: center;
+					font-size: 2rem;
+					font-weight: 800;
 
-                .paragraph {
-                    margin-bottom: 0;
-                }
-            }
-        }
+					input,
+					label {
+						margin: 0 1.5rem;
+					}
 
+					input {
+						padding: 1.6rem;
+						font-size: 2rem;
+						width: 30rem;
+					}
+				}
+			}
 
-        .charactercards-container {
-            grid-area: 2 / 1 / 3 / 2;
-            display: flex;
-            // justify-content: center;
-            overflow: scroll;
+			.charactercards-container {
+				grid-area: 2 / 1 / 3 / 2;
+				display: flex;
+				overflow: scroll;
+				overflow-y: hidden;
+				// width: 90%;
 
-            @include respond (tab-port) {
-                grid-area: 2 / 1 / 3 / 3;
-            }
+				// overflow-x: hidden;
+				::-webkit-scrollbar {
+					display: none;
+				}
 
-            .castMembers {
-                display: flex;
-                // justify-content: center;
-            }
+				@include respond (tab-port) {
+					grid-area: 2 / 1 / 3 / 3;
+				}
 
+				.castMembers {
+					display: flex;
+				}
+			}
+		}
 
-        }
+		.allstarPhone {
+			display: none;
+			visibility: hidden;
 
+			@include respond (tab-port) {
+				visibility: visible;
+				width: 100vw;
+				display: grid;
+				background: linear-gradient(to bottom, $color-grey-dark-2, $color-grey-dark-1);
 
-    }
+				grid-template-columns: repeat(2, 50%);
+				grid-template-rows: 1fr .5fr 3fr;
+				grid-column-gap: 0px;
+				grid-row-gap: 0px;
+				color: $color-yellow-light;
+				font-weight: 500;
 
-    .allstarPhone {
-        display: none;
-        visibility: hidden;
+				select {
+					// margin: 2rem 2rem;
+					// padding: 1rem;
+					font-size: 2.5rem;
+					color: $color-yellow-light;
+					background: $color-grey-dark-1;
+					line-height: 2rem;
+					width: 10rem;
+					text-align: center;
 
-        @include respond (tab-port) {
-            visibility: visible;
-            width: 100%;
-            display: grid;
+					option {
+						// width: 10rem;
+						text-align: center;
+					}
+				}
 
-            grid-template-columns: repeat(2, 50%);
-            grid-template-rows: repeat(3, 1fr);
-            grid-column-gap: 0px;
-            grid-row-gap: 0px;
+				.select-job,
+				.select-actor {
+					margin: 2rem 0;
+					font-size: 2.5rem;
+					display: flex;
+					flex-direction: column;
+					justify-content: center;
+					align-items: center;
+					width: 50vw;
+					// border-bottom: .5rem solid black;
+					// padding: 2rem;
+					// margin: 2rem;
+				}
 
-            .select-job {
-                grid-area: 1 / 1 / 2 / 2;
-                display: flex;
-                justify-content: flex-start;
-                align-items: center;
-                width: 50vw;
-                border: .5rem solid black;
-                padding: 1rem;
-            }
+				.select-job {
+					grid-area: 1 / 1 / 2 / 2;
+					padding-left: 2rem;
+				}
 
-            .select-actor {
-                grid-area: 1 / 2 / 2 / 3;
-                width: 50vw;
-                display: flex;
-                justify-content: flex-start;
-                align-items: center;
+				.select-actor {
+					grid-area: 1 / 2 / 2 / 3;
+					// left: -5rem;
+					margin: -2rem;
+				}
 
-                // margin-left: 5rem;
-                border: .5rem solid black;
-            }
+				.submit-staff {
+					grid-area: 2 / 1 / 3 / 3;
+					// display: flex;
+					// justify-content: center;
+					text-align: center;
+					font-size: 2rem;
+					text-decoration: none;
+					background: none;
+				}
 
-            .submit-staff {
-                grid-area: 2 / 1 / 3 / 3;
-                // display: flex;
-                margin-left: 5rem;
-                font-size: 2rem;
+				.selected-staff {
+					grid-area: 3 / 1 / 4 / 3;
+					// margin-left: 3rem;
+					// display: flex;
+					// justify-content: flex-start;
+					// align-items: flex-start;
+					// flex-direction: column;
+					display: block;
 
-            }
+					.paragraph {
+						font-size: 3rem;
+						font-weight: 700;
+						margin: .5rem;
+						background: linear-gradient(to right bottom, $color-yellow-light, $color-yellow-dark);
+						color: $color-grey-dark-1;
+						width: 35rem;
+						padding-left: 2rem;
+						border-radius: 3px;
+					}
 
-            .selected-staff {
-                grid-area: 3 / 1 / 4 / 3;
-            }
+					// .paragraph:last-child {
+					//     margin-bottom: 3rem;
+					// }
+				}
 
+				label {
+					padding: 1rem;
+				}
+			}
+		}
 
-            label {
-                padding: 1rem;
-            }
-        }
-    }
+		.allstarBig {
+			display: flex;
+			justify-content: center;
+			width: 100%;
+			// display: grid;
+			// width: 100%;
+			// grid-template-columns: repeat(5, 1fr);
+			// grid-template-rows: 1fr;
+			// grid-column-gap: 0px;
+			// grid-row-gap: 1rem;
+			// padding: 1rem;
 
-    .allstarBig {
-        // display: none !important;
-        display: grid;
-        grid-template-columns: repeat(5, 1fr);
-        grid-template-rows: 1fr;
-        grid-column-gap: 0px;
-        grid-row-gap: 0px;
+			@include respond (tab-port) {
+				display: none !important;
+				visibility: hidden;
+			}
 
-        @include respond (tab-port) {
-            display: none !important;
-            visibility: hidden;
-        }
+			.allstarContainer {
+				border: .2rem solid black;
+				background: linear-gradient(to right bottom, $color-yellow-light, $color-grey-dark-1);
+				border-radius: 3px;
+				padding: 1rem;
+				margin: 1rem;
+				width: 100%;
 
-        .allstarContainer {
-            // grid-area: 3 / 1 / 4 / 2;
-            // display: flex;
-            // flex-direction: column;
-            // justify-content: center;
-            // align-items: center;
-            border: .2rem solid black;
-            background: linear-gradient(to right bottom, $color-yellow-light, $color-grey-dark-1);
-            // background: $color-dark-grey;
-            border-radius: 3px;
-            margin: 1rem;
+				@include respond (tab-port) {
+					display: none !important;
+					visibility: hidden;
+				}
 
-            @include respond (tab-port) {
-                display: none !important;
-                visibility: hidden;
-            }
+				.driver,
+				.chef,
+				.guide,
+				.cleaner,
+				.chief {
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					flex-direction: column;
+				}
 
-            .driver {
-                grid-area: 1 / 1 / 2 / 2;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                flex-direction: column;
-            }
+				.driver {
+					grid-area: 1 / 1 / 2 / 2;
+				}
 
-            .chef {
-                grid-area: 1 / 2 / 2 / 3;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                flex-direction: column;
-            }
+				.chef {
+					grid-area: 1 / 2 / 2 / 3;
+				}
 
-            .guide {
-                grid-area: 1 / 3 / 2 / 4;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                flex-direction: column;
-            }
+				.guide {
+					grid-area: 1 / 3 / 2 / 4;
+				}
 
-            .cleaner {
-                grid-area: 1 / 4 / 2 / 5;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                flex-direction: column;
-            }
+				.cleaner {
+					grid-area: 1 / 4 / 2 / 5;
+				}
 
-            .chief {
-                grid-area: 1 / 5 / 2 / 6;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                flex-direction: column;
-            }
-        }
-    }
+				.chief {
+					grid-area: 1 / 5 / 2 / 6;
+				}
+			}
+		}
+	}
+}
+
+.button-box {
+	display: flex;
+	justify-content: center;
+	background: black;
+
+	@include respond (tab-port) {
+		display: none;
+	}
 }

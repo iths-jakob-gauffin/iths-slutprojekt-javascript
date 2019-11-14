@@ -23,3 +23,50 @@
         transform: translateY(0);
     }
 }
+
+.button-box {
+    display: flex;
+    justify-content: center;
+
+    @include respond (tab-port) {
+        display: none;
+    }
+}
+
+.btn-text-gold {
+
+    &:link,
+    &:visited {
+        color: $color-yellow-light;
+        font-size: 3rem;
+        display: inline-block;
+        text-decoration: none;
+        border-bottom: 1px solid $color-yellow-light;
+        padding: 3px;
+        transition: all .2s;
+    }
+
+    &:hover {
+        background-color: $color-yellow-light;
+        color: $color-white;
+        box-shadow: 0 1rem 2rem rgba($color-black, .15);
+        transform: translateY(-2px);
+    }
+
+    &:active {
+        box-shadow: 0 1rem 2rem rgba($color-black, .15);
+        transform: translateY(0);
+    }
+}
+
+.strip-btn {
+    background: none;
+    color: inherit;
+    border: none;
+    border-bottom: 1px solid $color-yellow-light;
+    padding: 0;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
+
+}

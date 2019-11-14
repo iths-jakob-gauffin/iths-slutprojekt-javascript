@@ -1,9 +1,6 @@
 .old {
     .main {
         .section-about {
-            // display: grid;
-            // grid-template-columns: 50% 50%;
-            // grid-template-rows: 20% 80%;
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             grid-template-rows: repeat(3, 1fr);
@@ -50,12 +47,6 @@
 
         .tours__card {
             grid-area: 2 / 1 / 5 / 4;
-            // display: grid;
-            // grid-template-columns: repeat(3, 1fr);
-            // grid-template-rows: repeat(3, 1fr);
-            // grid-column-gap: 0px;
-            // grid-row-gap: 0px;
-
             display: grid;
             grid-template-columns: 1fr 35rem 1fr 35rem 1fr 35rem 1fr;
             grid-template-rows: 1fr 50rem 1fr;
@@ -63,38 +54,17 @@
             grid-row-gap: 0px;
 
             &--1 {
-                // grid-area: 1 / 1 / 4 / 2;
-                // display: flex;
-                // justify-content: center;
-                // // align-items: center;
-
                 grid-area: 2 / 2 / 3 / 3;
             }
 
             &--2 {
-                // grid-area: 1 / 2 / 4 / 3;
-                // display: flex;
-                // justify-content: center;
-                // align-items: center;
                 grid-area: 2 / 4 / 3 / 5;
             }
 
             &--3 {
-                // grid-area: 1 / 3 / 4 / 4;
-                // display: flex;
-                // justify-content: center;
-                // align-items: center;
                 grid-area: 2 / 6 / 3 / 7;
             }
         }
-
-        // .tours__card {
-        //     display: flex;
-        //     // width: 100%;
-        //     justify-content: center;
-
-        // }
-
 
     }
 }

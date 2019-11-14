@@ -57,7 +57,7 @@ body {
     text-transform: uppercase;
     font-weight: 900;
     display: inline-block;
-    background-image: linear-gradient(to right, $color-primary-light, $color-primary-dark), url("../../../public/Images/002_SITE_PLAN.jpg");
+    background-image: linear-gradient(to right, $color-primary-light, $color-primary-dark);
 
     color: transparent;
     -webkit-background-clip: text;
@@ -79,7 +79,19 @@ body {
     font-weight: 900;
     display: inline-block;
     background-image: linear-gradient(to right, $color-yellow-light, $color-yellow-dark);
-    // -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    background-clip: text;
+}
+
+.heading-secondary-black {
+    font-size: 3.5rem;
+    text-transform: uppercase;
+    font-weight: 900;
+    display: inline-block;
+    background-image: linear-gradient(to right, $color-grey-dark-2, $color-grey-dark-1);
     background-clip: text;
     color: transparent;
     -webkit-background-clip: text;
@@ -96,7 +108,7 @@ body {
 }
 
 .paragraph {
-    font-size: 1.6rem;
+    font-size: 1.8rem;
 
     &:not(:last-child) {
         margin-bottom: 3rem;
