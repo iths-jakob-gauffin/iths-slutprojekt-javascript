@@ -23,14 +23,16 @@ function submitStaff() {
     let optionPath = document.querySelector("#job");
     let path = document.querySelector("#main-staff > div.allstarPhone > form.select-job");
     let actorPath = document.querySelector("#main-staff > div.allstarPhone > form.select-actor")
-    let saveButtonPlace = document.querySelector("#main-staff > div.allstarPhone > section.submit-staff > button");
+    let saveButtonPlace = document.querySelector("#main-staff > div.allstarPhone > section.submit-staff > a");
     let confirmButtonPlace = document.querySelector("#main-staff > div.allstarPhone > section.submit-staff");
+    let shrinkAllstarPhoneGrid = document.querySelector("#main-staff > div.allstarPhone");
     if (optionPath.length == 0) {
         clearOptionList(optionPath);
         // path.innerHTML = "Done!";
         path.remove();
         actorPath.remove();
         saveButtonPlace.remove();
+        shrinkAllstarPhoneGrid.classList.add("shrinkGrid");
         const confirmButton = document.createElement("a");
         confirmButton.classList.add("btn-text-gold");
         confirmButton.setAttribute("href", "#popup");

@@ -22,10 +22,17 @@
                     </h1>
                 </div>
             </header>
+            <article class="explainWhatToDo">
+                <p>1. Search for your favourite tv-show.</p>
+                <p>2. Assign your staff by dragging and dropping
+                    the actor card (NOT THE IMAGE!!!) you want into each
+                    golden ALL-STAR-container.</p>
+                <p>3. Then click "submit".</p>
+            </article>
+            <p class="mobile">Search for your favourite tv-show, then assign a job for each actor.</p>
             <main class="main-staff" id="main-staff">
                 <div class="form-container">
                     <form class="inputform" action="">
-
                         <label for="tvshow">Search tv-show</label>
                         <input type="text" name="tvshow" placeholder='E.g. "Breaking bad"'>
                     </form>
@@ -52,7 +59,7 @@
                         </select>
                     </form>
                     <section class="submit-staff">
-                        <button class="submitStaff btn-text" onclick="submitStaff()">Save</button>
+                        <a class="submitStaff btn-text-gold" onclick="submitStaff()">Save</a>
 
                     </section>
 
@@ -72,7 +79,8 @@
                     <div class="allstarContainer chef">
                         <h3 class="staff heading-secondary-black u-center-text">Chef</h3>
                         <div class="empty" id="chef"></div>
-                        <p class="paragraph u-center-text u-margin-bottom-small white">And the creator of all gourmet
+                        <p class="paragraph u-center-text u-margin-bottom-small white">And the creator of all the
+                            gourmet
                             meals?
                         </p>
                     </div>
@@ -106,7 +114,10 @@
                     </div>
                 </div>
             </main>
-            <a href="#popup" class="btn-text-gold">Submit</a>
+            <div class="submitBox">
+                <a href="#popup" class="btn-text-gold notTabPort">Submit</a>
+
+            </div>
 
 
         </div>
@@ -124,7 +135,8 @@
                 <a href="#main-staff" class="popup__close">&times;</a>
                 <h2 class="heading-secondary u-margin-bottom-small">Booking confirmation</h2>
                 <p class="popup__message paragraph"></p>
-                <div class="allstarImages"></div>
+                <div class="allstarImages">
+                </div>
                 <a href="#" class="btn-text">Ok</a>
             </div>
         </div>

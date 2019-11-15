@@ -339,6 +339,8 @@ form {
 @media (max-width: 56.25em) {
   .popup .popup__content {
     width: 95%;
+    height: 90%;
+    overflow: scroll;
   }
 }
 .popup .popup__content img {
@@ -382,6 +384,11 @@ form {
   display: flex;
   flex-direction: column;
 }
+@media (max-width: 56.25em) {
+  .popup .popup__content .popup__right {
+    justify-content: space-between;
+  }
+}
 .popup .popup__content .popup__message {
   font-size: 1.5rem;
   margin-bottom: 2rem;
@@ -421,7 +428,7 @@ form {
 .allstarImages {
   display: flex;
   justify-content: space-around;
-  margin-bottom: 1rem;
+  margin-bottom: 3rem;
 }
 
 .composition {
@@ -627,6 +634,17 @@ form {
   top: 40%;
   left: 50%;
   transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.card__cta .btn-text {
+  text-align: center;
+  font-size: 3rem;
+  margin: 3rem auto;
+  width: 100%;
+  color: white;
+  border: white;
 }
 .card__price-only {
   text-align: center;
@@ -743,6 +761,12 @@ form {
     grid-template-rows: 1fr 1.75fr 5fr;
   }
 }
+@media (max-width: 18.75em) {
+  .main .section-about {
+    grid-template-columns: 1fr repeat(2, 3fr) 1fr;
+    grid-template-rows: 1fr 1.75fr 5fr;
+  }
+}
 .main .section-about .heading-secondary {
   grid-area: 1/1/2/3;
 }
@@ -792,6 +816,16 @@ form {
   grid-template-rows: 0.2fr repeat(3, 1fr);
   grid-column-gap: 0px;
   grid-row-gap: 0px;
+}
+@media (max-width: 35.125em) {
+  .section-tours {
+    margin-top: -10rem;
+  }
+}
+@media (max-width: 18.75em) {
+  .section-tours {
+    margin-top: -10rem;
+  }
 }
 .section-tours .heading-secondary {
   grid-area: 1/1/2/4;
@@ -853,6 +887,39 @@ form {
 .container .staff {
   width: 100%;
 }
+.container .staff .explainWhatToDo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 5rem 15rem 0 15rem;
+}
+.container .staff .explainWhatToDo p {
+  text-align: center;
+  font-size: 2.5rem;
+}
+@media (max-width: 56.25em) {
+  .container .staff .explainWhatToDo {
+    display: none;
+  }
+}
+.container .staff .mobile {
+  display: none;
+}
+@media (max-width: 56.25em) {
+  .container .staff .mobile {
+    display: block;
+    display: block;
+    text-align: center;
+    font-size: 2.5rem;
+    margin: 5rem 5rem 0 5rem;
+  }
+}
+@media (max-width: 56.25em) {
+  .container .staff .submitBox {
+    display: none;
+  }
+}
 .container .staff .header {
   background-image: url("./../public/Images/space/space large 1.jpg");
   background-position: top;
@@ -871,16 +938,10 @@ form {
 .container .staff .main-staff {
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 0.5fr 1fr 1.6fr;
+  grid-template-rows: 0.5fr 33rem 1.6fr;
   grid-column-gap: 0px;
   grid-row-gap: 0px;
   width: 100%;
-}
-@media (max-width: 56.25em) {
-  .container .staff .main-staff {
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: 1fr 30rem 2fr;
-  }
 }
 .container .staff .main-staff .form-container {
   grid-area: 1/1/2/2;
@@ -895,7 +956,6 @@ form {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100%;
   }
 }
 .container .staff .main-staff .form-container .inputform {
@@ -938,11 +998,22 @@ form {
 @media (max-width: 56.25em) {
   .container .staff .allstarPhone {
     visibility: visible;
-    width: 100vw;
+    width: 100%;
     display: grid;
     background: linear-gradient(to bottom, #777, #333);
     grid-template-columns: repeat(2, 50%);
     grid-template-rows: 1fr 0.5fr 3fr;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    color: #ffb900;
+    font-weight: 500;
+  }
+  .container .staff .allstarPhone .shrinkGrid {
+    width: 100%;
+    display: grid;
+    background: linear-gradient(to bottom, #777, #333);
+    grid-template-columns: repeat(2, 50%);
+    grid-template-rows: 0fr 0.5fr 3fr;
     grid-column-gap: 0px;
     grid-row-gap: 0px;
     color: #ffb900;
@@ -980,23 +1051,28 @@ form {
   .container .staff .allstarPhone .submit-staff {
     grid-area: 2/1/3/3;
     text-align: center;
-    font-size: 2rem;
+    font-size: 3rem;
     text-decoration: none;
     background: none;
   }
   .container .staff .allstarPhone .selected-staff {
     grid-area: 3/1/4/3;
-    display: block;
+    width: 100%;
+    margin: 3rem auto;
   }
   .container .staff .allstarPhone .selected-staff .paragraph {
     font-size: 3rem;
     font-weight: 700;
-    margin: 0.5rem;
+    width: 100%;
+    margin: 3rem auto;
     background: linear-gradient(to right bottom, #ffb900, #ff7730);
     color: #333;
     width: 35rem;
-    padding-left: 2rem;
+    padding: 1rem;
     border-radius: 3px;
+  }
+  .container .staff .allstarPhone .selected-staff .paragraph:last-child {
+    margin-bottom: 10rem;
   }
   .container .staff .allstarPhone label {
     padding: 1rem;

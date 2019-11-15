@@ -35,6 +35,16 @@ Base + typography > general layout + grid > page layout > components
         ;
     }
 
+    @if $breakpoint==phone-small {
+        @media (max-width: 18.75em) {
+            @content
+        }
+
+        ;
+    }
+
+    //300px width
+
     @if $breakpoint==phone {
         @media (max-width: 37.5em) {
             @content

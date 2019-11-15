@@ -25,7 +25,7 @@ const TvShow = new GetTvShow(castMemberPlace);
 const dragAndDrop = new DragAndDrop();
 
 
-const scanAllstarButton = document.querySelector("body > div.container > div > a");
+const scanAllstarButton = document.querySelector("body > div.container > div > div > a");
 
 scanAllstarButton.addEventListener("click", e => {
 
