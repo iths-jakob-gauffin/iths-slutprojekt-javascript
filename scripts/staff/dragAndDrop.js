@@ -75,13 +75,33 @@ class DragAndDrop {
 }
 
 function renderStaff(draggedItem, staffId) {
-    console.log("hej");
+    console.log(draggedItem);
+    // const blaha = document.querySelector("img");
+    // const getInfoOnDraggedItem = blaha.getAttribute("actorid");
+    // console.log(getInfoOnDraggedItem);
+
     const staffPlace = document.querySelector('#' + staffId);
     const staffInfo = document.createElement('div');
     staffInfo.innerHTML = draggedItem;
 
+
     // staffInfo.actorId.add("id")
     staffPlace.appendChild(staffInfo);
+    const actorIdElement = staffPlace.querySelector(".innerImg");
+
+
+
+    const actorId = actorIdElement.getAttribute("actorid");
+    const actor = allActorObject[actorId];
+    // console.log(b);
+    staffPlace.innerHTML = `<div class="paragraph" actorId="${actor[5]}"><img src="${actor[4]}" class="innerImg" actorid="${actor[5]}">${actor[0]} or ${actor[1]}</div>`
+    // const getInfoOnDraggedItem2 = staffPlace.getAttribute("actorid");
+
+    // <div class="paragraph" actorid="8507"><img src="http://static.tvmaze.com/uploads/images/medium_portrait/0/2406.jpg" class="innerImg" actorid="8507">Betsy Brandt or Marie Schrader</div>
+    // <img src="http://static.tvmaze.com/uploads/images/medium_portrait/0/2411.jpg" class="innerImg" actorid="8813"></img>
+
+    console.log(getInfoOnDraggedItem);
+
     console.log("dragitem");
 
     console.log(draggedItem);

@@ -68,6 +68,9 @@ $color-blue-light: #2998FF;
 $color-blue-dark: #5643fa;
 $color-blue-light-op: rgba(41, 152, 255, 0.80);
 $color-blue-dark-op: #5543fa8a;
+$color-blue-other-light: #009FFD;
+$color-blue-other-dark: rgb(23, 23, 61);
+
 
 $color-white: #fff;
 $color-grey-light-1: #f7f7f7;
@@ -86,3 +89,7 @@ $shadow-dark: 0 2rem 6rem rgba(0, 0, 0, 0.3);
 //Font
 
 $default-font-size: 1.6rem;
+
+//Images
+
+$book-ocean-img: url("../../public/Images/Ocean/Ocean hotel 4 flipped 1800 resized.jpg");

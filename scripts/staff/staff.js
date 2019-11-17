@@ -1,7 +1,8 @@
 // import '../../styles/index.scss';
 
 let draggedHtml = '';
-const tvCastObject = {};
+let tvCastObject = {};
+let allActorObject = {};
 
 class GetTvShow {
     constructor(container) {
@@ -61,6 +62,22 @@ class GetTvShow {
                 console.log(err);
             }
             console.log(tvCastObject);
+            // allActorObject = JSON.parse(JSON.stringify(tvCastObject));
+            Object.keys(tvCastObject).forEach(function (key) {
+                allActorObject[key] = tvCastObject[key];
+            });
+
+            // var myObject={apple: "a", orange: "o"};
+            // var anothObject = {lemon: "l"};
+
+            // Object.keys(myObject).forEach(function(key) {
+            //     anothObject[key] = myObject[key];
+            // });
+
+            // tvCastObject = allActorObject;
+            console.log("allActorObject");
+            console.log(allActorObject);
+
 
         })
 
@@ -85,7 +102,7 @@ class GetTvShow {
             charDiv.setAttribute('draggable', true);
             charDiv.classList.add('fill');
             charDiv.classList.add("characterCard");
-            charDiv.innerHTML = `<div class="paragraph" actorId="${actor[5]}"><img src="${actor[4]}">${actor[0]} or ${actor[1]}</div>`;
+            charDiv.innerHTML = `<div class="paragraph" actorId="${actor[5]}"><img src="${actor[4]}" class="innerImg" actorid="${actor[5]}">${actor[0]} or ${actor[1]}</div>`;
 
             this.container.appendChild(charLiElement);
             charLiElement.appendChild(charDiv);

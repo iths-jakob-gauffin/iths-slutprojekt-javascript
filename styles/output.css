@@ -467,7 +467,7 @@ form {
   z-index: 20;
 }
 
-.btn-text:link, .btn-text:visited {
+.btn-text, .btn-text:link, .btn-text:visited {
   color: #1ed561;
   font-size: 1.6rem;
   display: inline-block;
@@ -475,8 +475,10 @@ form {
   border-bottom: 1px solid #1ed561;
   padding: 3px;
   transition: all 0.2s;
+  border: none;
+  cursor: pointer;
 }
-.btn-text:hover {
+.btn-text:hover, .btn-text:focus {
   background-color: #1ed561;
   color: #fff;
   box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
@@ -521,8 +523,10 @@ form {
   background: none;
   color: inherit;
   border: none;
-  border-bottom: 1px solid #ffb900;
-  padding: 0;
+  line-height: 1.6rem;
+  padding-bottom: 0.7rem;
+  padding-right: 2rem;
+  padding-left: 1rem;
   font: inherit;
   cursor: pointer;
   outline: inherit;
@@ -737,6 +741,91 @@ form {
 }
 .staff .invisible {
   display: none;
+}
+
+.form__group:not(:last-child) {
+  margin-bottom: 1.5rem;
+}
+.form .heading-tertiary {
+  margin: 3rem 0;
+}
+.form__input {
+  font-size: 1.5rem;
+  font-family: inherit;
+  padding: 1.5rem 2rem;
+  border-radius: 2px;
+  background-color: rgba(255, 255, 255, 0.5);
+  border: none;
+  border-bottom: 3px solid transparent;
+  width: 90%;
+  display: block;
+  color: inherit;
+  transition: all 0.3s;
+}
+.form__input::-webkit-input-placeholder {
+  color: #777;
+}
+.form__input:focus {
+  outline: none;
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1);
+  border-bottom: 3px solid #1ed561;
+}
+.form__input:focus:invalid {
+  border-bottom: 3px solid #ff7730;
+}
+.form__label {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-left: 2rem;
+  margin-top: 1.7rem;
+  display: block;
+  transition: all 0.3s;
+}
+.form__input:placeholder-shown + .form__label {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-4rem);
+}
+.form__radio-group {
+  width: 30%;
+  display: inline-block;
+  margin-bottom: 1.5rem;
+}
+.form__radio-input {
+  display: none;
+}
+.form__radio-label {
+  font-size: 1.6rem;
+  cursor: pointer;
+  position: relative;
+  padding-left: 3.5rem;
+}
+.form__radio-button {
+  height: 2rem;
+  width: 2rem;
+  border: 3px solid #1ed561;
+  border-radius: 50%;
+  display: inline-block;
+  position: absolute;
+  left: 0;
+  top: 0.2rem;
+}
+.form__radio-button::after {
+  content: "";
+  display: block;
+  height: 1rem;
+  width: 1rem;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #1ed561;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+.form__radio-input:checked ~ .form__radio-label .form__radio-button::after {
+  opacity: 1;
 }
 
 .main .section-about {
@@ -1140,22 +1229,100 @@ form {
   }
 }
 
-.ocean .image-container {
-  width: 80rem;
-  margin: auto;
-  padding: 5rem 0;
-  border: 3px solid #fff;
-  background: #fff;
-}
-.ocean .image-container .main-img img,
-.ocean .image-container .imgs img {
+.container-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   width: 100%;
 }
-.ocean .image-container .imgs {
+.container-content .header-image {
+  height: 75vh;
+  width: 100%;
+  background-color: #fff;
+  background-image: url("./../public/Images/Ocean/Ocean bubbles 5.jpg");
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: 0 auto;
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 50vh, 0 100%);
+}
+.container-content .image-container {
+  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.3);
+}
+.container-content .image-container {
+  position: relative;
+  z-index: 5;
+  width: 85rem;
+  margin: 5rem auto;
+  padding: 5rem 7rem;
+  background-color: #f7f7f7;
+  position: relative;
+  top: -70rem;
+  border-radius: 3px;
+}
+.container-content .image-container .image-container-box-shadow {
+  padding: 1rem;
+  width: 100%;
+  height: 100%;
+  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.3);
+}
+.container-content .image-container .image-container-box-shadow .main-img {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  height: 50rem;
+  padding: 1rem 1.5rem;
+}
+.container-content .image-container .image-container-box-shadow .main-img img,
+.container-content .image-container .image-container-box-shadow .imgs img {
+  width: 100%;
+  height: 100%;
+}
+.container-content .image-container .image-container-box-shadow .imgs {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-gap: 5px;
+  grid-template-rows: 10rem 10rem;
+  grid-gap: 0.5rem;
   width: 100%;
+  overflow: hidden;
+  padding: 1rem 1.5rem;
+}
+.container-content .image-container .image-container-box-shadow .imgs img {
+  height: 100%;
+}
+.container-content .book-background {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  height: 150vh;
+  top: -65rem;
+  background-image: linear-gradient(to right bottom, rgba(41, 152, 255, 0.8), #17173d), url("../../public/Images/Ocean/Ocean bubbles 4.jpg");
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: 0 auto;
+  clip-path: polygon(0 17.5%, 100% 0, 100% 100%, 0 100%);
+}
+.container-content .section-book {
+  width: 100%;
+  padding: 25rem 15rem;
+  position: relative;
+  top: -200rem;
+  z-index: 15;
+}
+.container-content .section-book .book {
+  background-image: linear-gradient(105deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.9) 50%, transparent 50%), url("../../public/Images/Ocean/Ocean reef 4 1800.jpg");
+  background-position: 35% 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 3px;
+  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.3);
+  height: 80rem;
+}
+.container-content .section-book .book__form {
+  width: 50%;
+  padding: 3rem 5rem;
 }
 
 .fade-in {

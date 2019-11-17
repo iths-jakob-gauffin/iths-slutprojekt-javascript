@@ -1,17 +1,25 @@
 .btn-text {
 
+    &,
     &:link,
     &:visited {
         color: $color-primary;
+        // background-color: transparent;
         font-size: $default-font-size;
         display: inline-block;
         text-decoration: none;
         border-bottom: 1px solid $color-primary;
         padding: 3px;
         transition: all .2s;
+        border: none;
+        cursor: pointer;
+        // padding: .5rem;
     }
 
-    &:hover {
+
+
+    &:hover,
+    &:focus {
         background-color: $color-primary;
         color: $color-white;
         box-shadow: 0 1rem 2rem rgba($color-black, .15);
@@ -63,8 +71,11 @@
     background: none;
     color: inherit;
     border: none;
-    border-bottom: 1px solid $color-yellow-light;
-    padding: 0;
+    line-height: 1.6rem;
+    // border-bottom: 1px solid $color-yellow-light;
+    padding-bottom: .7rem;
+    padding-right: 2rem;
+    padding-left: 1rem;
     font: inherit;
     cursor: pointer;
     outline: inherit;

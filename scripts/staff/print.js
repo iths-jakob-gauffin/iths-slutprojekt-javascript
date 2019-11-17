@@ -1,5 +1,23 @@
 const allstarInfoObject = {};
 let allstarImagesArray = [];
+
+function link(formInfoArray) {
+	window.location.replace("./staff2.html");
+	return formInfoArray;
+}
+
+function getUserInfoFromLocalStorage() {
+	let userName = localStorage.getItem("userName");
+	let email = localStorage.getItem("email");
+	let stay = localStorage.getItem("stay");
+	let music = localStorage.getItem("music");
+	let food = localStorage.getItem("food");
+
+	formInfoArray = [userName, email, stay, music, food];
+	return formInfoArray;
+
+}
+
 class Print {
 	constructor() {
 		this.allstarImagesPlace = document.querySelector('.allstarImages');
@@ -20,17 +38,25 @@ class Print {
 		this.message(allstarObject);
 	}
 	message(allstarObject) {
-		const popup__message = `You have now confirmed your all-star staff! 
+		// const userInfo = getUserInfo();
+		// console.log(userInfo);
+		const formInfoArray = getUserInfoFromLocalStorage();
+		console.log(formInfoArray);
+
+
+		const popup__message = `${formInfoArray[0]}, you have now confirmed your all-star staff! 
         
         ${allstarObject.driver[0]}, also known as "${allstarObject.driver[1]}", will be your driver. 
-        ${allstarObject.driver[2].genderWords[0]} has just started applying for driving lessons. 
+		${allstarObject.driver[2].genderWords[0]} has just started adding ${formInfoArray[3]} tracks to 
+		the travel playlist. 
         
-        Your chef will be "${allstarObject.chef[1]}". 
+		Your chef will be "${allstarObject.chef[1]}". ${allstarObject.chef[2].genderWords[0]}'s browsing 
+		the internet for ${formInfoArray[4]} recipes.  
 
         "${allstarObject.cleaner[0]}", or ${allstarObject.cleaner[1]} will keep the hotel spotless, 
         while you and your guide, "${allstarObject.guide[0]}", are out on various adventurous excursions. 
 
-        We are looking forward to your stay with us! 
+        We are truly looking forward to host you for ${formInfoArray[2]}! 
         / Chief of staff - "${allstarObject.boss[0]}".`;
 
 		const popupMessagePlace = document.querySelector('.popup__message');
@@ -56,11 +82,12 @@ class Print {
 		const allstarId = document.querySelector('#' + keyId);
 		const paragraph = allstarId.querySelector('.paragraph');
 		const actorId = paragraph.getAttribute('actorid');
-		const allstarInfo = tvCastObject[actorId];
+		const allstarInfo = allActorObject[actorId];
+		// const allstarInfo = tvCastObject[actorId];
 
 		allstarInfoObject[keyId] = allstarInfo;
 
-		allstarImagesArray.push([ allstarInfo[3] ]);
+		allstarImagesArray.push([allstarInfo[3]]);
 		allstarInfoObject['images'] = allstarImagesArray;
 		return allstarInfoObject;
 	}
